@@ -1,9 +1,11 @@
 # go-ethereum code analysis
 
-**I hope to analyze the code of Ethereum to learn the use of blockchain technology and GO language.**
+[go-ethereum](https://github.com/ethereum/go-ethereum)
 
-Analysis of [go-ethereum](https://github.com/ethereum/go-ethereum)  
-The process, I hope to start from the low-level technical components that rely on less, and slowly go deep into the core logic.
+PoS(Execution Client, Consensus Client, Validator Client)에 대해 조금 더 깊은 이해를 위해 첫번째로 Geth 코드를 분석 해보고자 합니다.
+
+**사전 고지**
+본 문서는  [Go-Ethereum analysis (English Version)](https://github.com/agiletechvn/go-ethereum-code-analysis), [Go-Ethereum analysis (한국어)](https://github.com/scalalang2/go-ethereum-code-analysis) 문서를 재해석 및 제가 이해하기 쉽게 가공한 문서입니다.
 
 ## Table of contents
 
