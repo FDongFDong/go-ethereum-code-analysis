@@ -1,47 +1,46 @@
 ### Go ethereum directory
 
-The organization structure of the go-ethereum project is basically a directory divided by functional modules. The following is a brief introduction to the structure of each directory. Each directory is also a package in the GO language. I understand that the package in Java should be similar. meaning.
+프로젝트의 구조입니다.
+기능 모듈별로 구분된 디렉토리입니다.
 
-    accounts        	Achieved a high-level Ethereum account management
-    bmt			Implementation of binary Merkel tree
-    build			Mainly some scripts and configurations compiled and built
-    cmd			A lot of command line tools, one by one
-    	/abigen		Source code generator to convert Ethereum contract definitions into easy to use, compile-time type-safe Go packages
-    	/bootnode	Start a node that only implements network discovery
-    	/evm		Ethereum virtual machine development tool to provide a configurable, isolated code debugging environment
-    	/faucet
-    	/geth		Ethereum command line client, the most important tool
-    	/p2psim		Provides a tool to simulate the http API
-    	/puppeth	Create a new Ethereum network wizard, such as Clique POA consensus
-    	/rlpdump 	Provides a formatted output of RLP data
-    	/swarm		Swarm network utils
-    	/util		Provide some public tools
-    	/wnode		This is a simple Whisper node. It can be used as a standalone boot node. In addition, it can be used for different testing and diagnostic purposes.
-    common			Provide some public tools
-    compression		Package rle implements the run-length encoding used for Ethereum data.
-    consensus		Provide some consensus algorithms from Ethereum, such as ethhash, clique(proof-of-authority)
-    console			console package
-    contracts		Smart contracts deployed in genesis block, such as checkqueue, DAO...
-    core			Ethereum's core data structures and algorithms (virtual machines, states, blockchains, Bloom filters)
-    crypto			Encryption and hash algorithms
-    eth			Implemented the consensus of Ethereum
-    ethclient		Provides RPC client for Ethereum
-    ethdb			Eth's database (including the actual use of leveldb and the in-memory database for testing)
-    ethstats		Provide a report on the status of the network
-    event			Handling real-time events
-    les			Implemented a lightweight server of Ethereum
-    light			Achieve on-demand retrieval for Ethereum lightweight clients
-    log			Provide log information that is friendly to humans and computers
-    metrics			Provide disk counter, publish to grafana for sample
-    miner			Provide block creation and mining in Ethereum
-    mobile			Some wrappers used by the mobile side
-    node			Ethereum's various types of nodes
-    p2p			Ethereum p2p network protocol
-    rlp			Ethereum serialization, called recursive length prefix
-    rpc			Remote method call, used in APIs and services
-    swarm			Swarm network processing
-    tests			testing purposes
-    trie			Ethereum's important data structure package: trie implements Merkle Patricia Tries.
-    whisper			A protocol for the whisper node is provided.
-
-It can be seen that the code of Ethereum is still quite large, but roughly speaking, the code structure is still quite good. I hope to analyze from some relatively independent modules. Then delve into the internal code. The focus may be on modules such as p2p networks that are not covered in the Yellow Book.
+    accounts        이더리움 Account의 추상화된 코드
+    build			스크립트 파일과 설정 파일들이 모여있는 곳
+    cmd			    여러가지 커맨드 라인 툴들이 모여있는 곳
+    common			공통적으로 사용되는 코드들이 모여있는 곳
+        /abidump    이더리움 스마트 컨트랙트의 ABI 데이터를 구문 분석하고 해석하는 도구
+    	/abigen		이더리움 스마트 컨트랙트를 Go 언어로 바인딩하는  도구
+    	/bootnode   이더리움의 부트 노드를 구동하는 도구
+        /clef       이더리움의 노드 운영과 개인키의 관리를 분리시키기 위한 도구
+        /devp2p     이더리움의 p2p 네트워크를 구현하는 도구
+        /ethkey     이더리움의 키 관리 도구
+    	/evm		설정 및 디버깅 환경을 제공하는 EVM 개발 도구
+    	/faucet     이더리움 테스트넷에서 사용할 수 있는 테스트용 이더를 제공하는 도구
+    	/geth	    이더리움 클라이언트를 구동하는 도구(가장 중요함)
+    	/p2psim		이더리움의 p2p 네트워크를 시뮬레이션하는 도구
+        /rlpdump 	RLP 데이터의 포맷된 출력을 제공하는 도구
+    	/utils	    이더리움의 유틸리티 도구
+    common		    공통적으로 사용되는 코드들이 모여있는 곳
+    consensus		이더리움의 합의 알고리즘을 구현한 코드들이 모여있는 곳(beacon, clique, ethash 등)
+    console		    이더리움의 콘솔 도구
+    core		    이더리움의 핵심 코드들이 모여있는 곳(블록체인, 노드, 트랜잭션, 가스, 가상머신, 블룸 필터 등)
+    crypto          암호화 관련 코드들이 모여있는 곳(암호화 및 해시 알고리즘 등)
+    eth			    이더리움 합의 구현 코드들이 모여 있는 곳
+    ethclient		이더리움 RPC 클라이언트 구현 코드들이 모여 있는 곳
+    ethdb			이더리움 데이터베이스 구현 코드들이 모여 있는 곳(levelDB, memoryDB, pebbleDB 등)
+    ethstats		이더리움 네트워크 통계를 수집하는 코드들이 모여 있는 곳
+    event			이더리움의 이벤트 처리 코드들이 모여 있는 곳
+    graphql         이더리움의 GraphQL API 구현 코드들이 모여 있는 곳
+    les             이더리움의 라이트 서버 구현 코드들이 모여 있는 곳
+    light			이더리움의 라이트 클라이언트 구현 코드들이 모여 있는 곳
+    log		        이더리움의 로그 관련 코드들이 모여 있는 곳
+    metrics			그라파나에 제공하기 위한 metric 관련 코드들이 모여 있는 곳
+    miner			이더리움의 블록 생성 및 마이닝 관련 코드들이 모여 있는 곳
+    node		    이더리움의 다양한 노드 구현 코드들이 모여 있는 곳
+    p2p			    이더리움의 p2p 네트워크 구현 코드들이 모여 있는 곳
+    params			이더리움의 파라미터 관련 코드들이 모여 있는 곳
+    rlp			    이더리움의 RLP(Recursive Length Prefix) 관련 코드들이 모여 있는 곳
+    rpc			    이더리움의 RPC 서버 구현 코드들이 모여 있는 곳(API와 서비스에서 사용)
+    signer			이더리움의 서명 관련 코드들이 모여 있는 곳
+    swarm			이더리움의 스웜 구현 코드들이 모여 있는 곳
+    tests		    이더리움의 테스트 코드들이 모여 있는 곳
+    trie		    이더리움의 trie 구현 코드들이 모여 있는 곳(머클 패트리샤 트리)
