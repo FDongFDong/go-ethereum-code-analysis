@@ -15,9 +15,8 @@ PoS(Execution Client, Consensus Client, Validator Client)에 대해 조금 더 �
 
 > 어느정도 정리가 되면 체크박스를 통해 알려 드리겠습니다.
 
--  [x] [go ethereum code analysis (account, smart contract, logs, etc...)](/go-ethereum-code-analysis.md)
-- [yellow book symbol index](symbol-index.md)
-- [rlp, rlpx analysis](/rlp-analysis.md)
+-  [x] [go ethereum 디렉토리 분석](/go-ethereum-code-analysis.md)
+- [ ] [rlp, rlpx 분석](/rlp-analysis.md)
 - [trie source analysis](/trie-analysis.md)
 - [ethdb analysis](/ethdb-analysis.md)
 - [rpc analysis](/rpc-analysis.md)
