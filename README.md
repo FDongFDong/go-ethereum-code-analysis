@@ -1,8 +1,10 @@
 # go-ethereum code analysis
 
+
 [go-ethereum](https://github.com/ethereum/go-ethereum)
 
 PoS(Execution Client, Consensus Client, Validator Client)에 대해 조금 더 깊은 이해를 위해 첫번째로 Geth 코드를 분석 해보고자 합니다.
+2023-05-19 기준으로 코드를 분석하겠습니다.
 
 **사전 고지**
 
