@@ -9,7 +9,7 @@ PoS(Execution Client, Consensus Client, Validator Client)에 대해 조금 더 �
 
 **사전 고지**
 
-본 문서는  [Go-Ethereum analysis (English Version)](https://github.com/agiletechvn/go-ethereum-code-analysis), [Go-Ethereum analysis (한국어)](https://github.com/scalalang2/go-ethereum-code-analysis) 문서를 재해석 및 제가 이해하기 쉽게 가공한 문서입니다.
+본 문서는  [Go-Ethereum analysis (English Version)](https://github.com/agiletechvn/go-ethereum-code-analysis) 문서를 재해석 및 제가 이해하기 쉽게 가공한 문서입니다.
 
 ## Table of contents
 
