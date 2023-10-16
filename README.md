@@ -21,6 +21,7 @@ PoS(Execution Client, Consensus Client, Validator Client)에 대해 조금 더 �
 - [ethdb analysis](/ethdb-analysis.md)
 - [rpc analysis](/rpc-analysis.md)
 - [p2p analysis](/p2p-analysis.md)
+- [transaction]
 - [eth protocol analysis](/eth-analysis.md)
 - **core analysis**
   - [blockchain index, chain_indexer analysis](/core-chain_indexer-analysis.md)
