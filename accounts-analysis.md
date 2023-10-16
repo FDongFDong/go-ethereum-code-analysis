@@ -1,4 +1,6 @@
-The accounts package implements the Ethereum client's wallet and account management. Ethereum's wallet offers both keyStore mode and usb wallet. At the same time, the ABI code of the Ethereum contract is also placed in the account/abi directory. The abi project seems to have nothing to do with account management. For the time being, only the interface of account management is analyzed. The implementation code for the specific keystore and usb will not be given for the time being.
+Account 구조체에서 Address 필드는 20 바이트의 고정 배열이고, URL은 해당 주소의 위치를 나타내며 이는 옵션 사항이다.
+
+이더리움 클라이언트의 지갑과 계정 관리를 구현합니다. 이더리움 지갑은 키스토어 모드와 USB 지갑을 모두 제공합니다. 동시에 이더리움 컨트랙트의 ABI 코드도 계정/abi 디렉토리에 저장됩니다. abi 프로젝트는 계정 관리와는 관련이 없는 것으로 보입니다. 당분간은 계정 관리 인터페이스만 분석할 예정입니다. 특정 키스토어와 USB에 대한 구현 코드는 당분간 제공되지 않을 것입니다.
 
 Accounts are defined by data structures and interfaces.
 
