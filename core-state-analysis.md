@@ -249,29 +249,24 @@ func (ch touchChange) undo(s *StateDB) {
 
 ## state_object.go
 
-stateObject represents the Ethereum account being modified.
+상태 오브젝트는 수정 중인 이더리움 계정을 나타냅니다.
 
 data structure
 
 ```go
 type Storage map[common.Hash]common.Hash
 
-// stateObject represents an Ethereum account which is being modified.
-// The usage pattern is as follows:
-// First you need to obtain a state object.
-// Account values can be accessed and modified through the object.
-// Finally, call CommitTrie to write the modified storage trie into a database.
-
-// The usage patterns are as follows:
-// First you need to get a state_object.
-// Account values can be accessed and modified by objects.
-// Finally, call CommitTrie to write the modified storage trie to the database.
+// stateObject는 수정 중인 이더리움 계정을 나타냅니다.
+// 어카운트들이 모인 것을 이더리움에서는 상태(state)라고 하고 이를 stateObject 구조체로 표현합니다
+// 사용 패턴은 다음과 같습니다:
+// 어카운트에 접근하여 상태를 변경하려면 stateObject를 통해 먼저 상태 객체를 가져와야 합니다. 그리고 접근한 후 상태를 변경할 수 있습니다.
+// 변경된 어카운트는 CommitTrie() 함수를 호출하여 변경된 Trie를 ethdb 패키지를 통해 Level DB에 저장합니다.
 
 type stateObject struct {
-	address  common.Address
-	addrHash common.Hash // hash of ethereum address of the account
-	data     Account  // This is the actual Ethereum account information.
-	db       *StateDB // state database
+	address  common.Address	// Address
+	addrHash common.Hash // Account의 주소를 Keccak256 해시한 값
+	data     Account  // 실제 이더리움 Account 정보입니다.
+	db       *StateDB // 상태를 저장할 DBMS에 대한 포인터입니다.
 
 	// DB error.
 	// State objects are used by the consensus core and VM which are
@@ -280,8 +275,8 @@ type stateObject struct {
 	// by StateDB.Commit.
 	//
 	// Write caches.
-	trie Trie // storage trie, which becomes non-nil on first access
-	code Code // contract bytecode, which gets set when code is loaded
+	trie Trie // Trie 저장소, which becomes non-nil on first access
+	code Code // 컨트랙트의 바이트코드, which gets set when code is loaded
 
 	cachedStorage Storage // Storage entry cache to avoid duplicate reads
 	dirtyStorage  Storage // Storage entries that need to be flushed to disk
